@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+}
+body {
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: timeburner-GA;
+    src: url(../fonts/timeburnernormal.ttf);
+}
+body {
+    background-color: black;
+    color: aqua;
+    font-family: timeburner-GA;
+}
+.logo {
+    width: 640px;
+    height: 532px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+    mix-blend-mode: screen;
+    z-index: 1;
+}
+.layers {
+    perspective: 1000px;
+}
+.layers__container {
+    height: 100vh;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: 100s cubic-bezier(0,.73,.27,1);
+}
+.layers__item {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    inset: -1vw;
+}
+.layer-1 {
+    transform: translateZ(-300px) scale(1.2);
+}
+.layer-2 {
+    transform: translateZ(-150px) scale(.8);
+    /* opacity: .5; */
+}
+.layer-Assassin {
+    transform: translateZ(0px) scale(.9);
+    margin-left: 10%;
+}
+.layer-Jager {
+    transform: translateZ(100px) scale(.8);
+}
+.layer-Myrmillo {
+    transform: translateZ(300px) scale(.8);
+}
+.layer-3 {
+    transform: translateZ(400px);
+    opacity: .5;
+}
+.layer-4 {
+    transform: translateZ(700px) scale(.35);
+    opacity: .25;
+}
